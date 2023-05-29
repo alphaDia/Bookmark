@@ -1,9 +1,8 @@
-from django.urls import path, include
-from .views import (user_login, 
-                    dashboard, register, edit)
-from django.contrib.auth import views as auth_views
+from django.urls import include, path
 
+from .views import dashboard, edit, register
 
+# from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -11,21 +10,19 @@ urlpatterns = [
     # login / logout urls
     # path('login/', auth_views.LoginView.as_view(), name='login'),
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    
     # password change urls
     # path('password-change/',
-    #      auth_views.PasswordChangeView.as_view(), 
+    #      auth_views.PasswordChangeView.as_view(),
     #      name='password_change'),
     # path('password-change/done/',
     #      auth_views.PasswordChangeDoneView.as_view(),
     #      name='password_change_done'),
-    
     # password reset urls
-    # path('password-reset/', 
-    #      auth_views.PasswordResetView.as_view(), 
+    # path('password-reset/',
+    #      auth_views.PasswordResetView.as_view(),
     #      name='password_reset'),
-    # path('password-resset/done/', 
-    #      auth_views.PasswordResetDoneView.as_view(), 
+    # path('password-resset/done/',
+    #      auth_views.PasswordResetDoneView.as_view(),
     #      name='password_reset_done'),
     # path('password-reset/<uidb64>/<token>/',
     #      auth_views.PasswordResetConfirmView.as_view(),
@@ -33,13 +30,11 @@ urlpatterns = [
     # path('password-reset/complete/',
     #      auth_views.PasswordResetCompleteView.as_view(),
     #      name='password_reset_complete'),
-    
-    path('', include('django.contrib.auth.urls')),
-    path('', dashboard, name='dashboard'),
-    path('register/', register, name='register'),
-    path('edit/', edit, name='edit'),
-    
+    path("", include("django.contrib.auth.urls")),
+    path("", dashboard, name="dashboard"),
+    path("register/", register, name="register"),
+    path("edit/", edit, name="edit"),
     # path('password-change/',
-    #      UserPasswordChangeView.as_view(), 
+    #      UserPasswordChangeView.as_view(),
     #      name='password_change'),
 ]

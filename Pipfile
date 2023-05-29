@@ -10,6 +10,8 @@ bcrypt = "*"
 social-auth-app-django = "*"
 python-jose = ">=3.0.0"
 python-dotenv = "*"
+requests = "==2.28.1"
+easy-thumbnails = "==2.8.1"
 
 [dev-packages]
 pyopenssl = "*"
